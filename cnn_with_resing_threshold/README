@@ -1,0 +1,54 @@
+This is the CNN with resizing threshold
+----------------------------------------
+
+Dependencies
+-------------
+theano
+pip install theano
+
+matplotlib
+pip install matplotlib
+
+open cv
+pip install opencv-python
+
+requests
+pip install requests
+
+
+For downloading the data, preprocessed data and saved models:
+--------------------------------------------------------------
+$ ./resolve_dependencies
+
+Data processing
+----------------
+For training the network, we have first preprocessed the data (the training, validation as well as test), by extracting the different channels of the images and creating separate files.
+This is done by the code/loading_data.py file.
+It takes the images in Data/processed_test, Data/processed_train, Data/processed_val and then creates the files:
+
+Data/test_data.npy, Data/train_data.npy, Data/val_data.npy -> Which is the test, train and validation data for the network.
+
+To do this, open terminal (make sure Data/processed_test, Data/processed_train, Data/processed_val are present):
+Go to code folder
+$ python loading_data.py
+
+
+Training models
+----------------
+We have trained a model which take data from the files created in Data folder, train the model, and save the model with maximum accuracy on the validation data in saved_models folder.
+
+For training model:
+Go to code folder
+$ python model.py
+
+
+Testing
+--------
+
+Go to code folder
+$ python test.py
+
+
+Output text files folder
+-------------------------
+The Output text files folder consist of text files which show the accuracies obtained by network, and the training process for the model.

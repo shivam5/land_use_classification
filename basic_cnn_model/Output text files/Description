@@ -1,0 +1,6 @@
+Working load and save - tweaked parameters
+Resized all bboxes to 64*88
+
+Validation error is 39.545455 %
+ Test error is 40.757576 %
+

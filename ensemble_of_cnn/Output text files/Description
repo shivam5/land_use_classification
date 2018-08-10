@@ -1,0 +1,72 @@
+
+Using majority vote :
+-----------------------
+Majority vote, or output of 1st
+Number of correctly classified in R channel :  367.0
+Test accuracy is in 1 (R) 55.6060606061
+
+Number of correctly classified in G :  343.0
+Test accuracy is in 2 (G) 51.9696969697
+
+Number of correctly classified in B :  336.0
+Test accuracy is in 3 (B) 50.9090909091
+
+from ensemble:
+Number of correctly classified :  357.0
+Test accuracy is 54.0909090909
+
+
+Using another ensemble method :
+
+Confusion matrices :
+----------------------
+Validation result of model 1:
+[[ 46.  14.   3.   5.  30.  12.]
+ [ 10.  49.  35.  10.   1.   5.]
+ [  6.  13.  67.  17.   4.   3.]
+ [  2.   1.  12.  86.   8.   1.]
+ [ 23.   3.   4.  13.  66.   1.]
+ [ 14.   9.  12.   7.   8.  60.]]
+Number of correctly classified :  374.0
+Test accuracy is 56.6666666667
+
+
+Validation result of model 2:
+[[ 58.  20.   1.   2.  20.   9.]
+ [  9.  61.  25.  10.   3.   2.]
+ [ 10.  17.  60.  18.   3.   2.]
+ [  4.   7.   6.  87.   6.   0.]
+ [ 32.   7.   3.  15.  52.   1.]
+ [ 22.  17.   9.   6.   5.  51.]]
+Number of correctly classified :  369.0
+Test accuracy is 55.9090909091
+
+
+Validation result of model 3:
+[[ 42.  10.  10.   7.  24.  17.]
+ [  8.  52.  29.   9.   1.  11.]
+ [  3.  12.  69.  18.   3.   5.]
+ [  0.   3.  10.  82.  14.   1.]
+ [ 12.   6.   6.  18.  64.   4.]
+ [ 21.  11.  10.   5.  10.  53.]]
+Number of correctly classified :  362.0
+Test accuracy is 54.8484848485
+
+
+
+Final ensemble : 
+If model 2 classifies as class 4 (87/110 accuracy), use its prediction, otherwise prediction of model 1 
+
+Loading data...
+Number of correctly classified in 1 :  367.0
+Test accuracy is in 1 55.6060606061
+Number of correctly classified in 2 :  343.0
+Test accuracy is in 2 51.9696969697
+Number of correctly classified in 3 :  336.0
+Test accuracy is in 3 50.9090909091
+
+Ensemble accuracy:
+-------------------
+Number of correctly classified :  369.0
+Test accuracy is 55.9090909091
+

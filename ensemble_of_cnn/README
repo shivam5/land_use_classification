@@ -1,0 +1,100 @@
+This is an ensemble of CNN
+---------------------------
+
+Dependencies
+-------------
+theano
+pip install theano
+
+matplotlib
+pip install matplotlib
+
+open cv
+pip install opencv-python
+
+requests
+pip install requests
+
+
+
+For the ensemble, we train 3 CNNs. One is trained on the R channel of the images, one is trained on the G channel of the images, and the other is trained on the B channel of the images.
+
+For downloading the data, preprocessed data and saved models:
+--------------------------------------------------------------
+$ ./resolve_dependencies
+
+Data processing
+----------------
+For training the different networks, we have first preprocessed the data (the training, validation as well as test), by extracting the different channels of the images and creating separate files.
+This is done by the code/loading_data.py file.
+It takes the images in Data/processed_test, Data/processed_train, Data/processed_val and then creates the files:
+
+test_data1.npy, train_data1.npy, val_data1.npy -> Which is the test, train and validation data for the first network. These file consist of data for only the red channel.
+test_data2.npy, train_data2.npy, val_data2.npy -> Which is the test, train and validation data for the second network. These file consist of data for only the green channel.
+test_data3.npy, train_data3.npy, val_data3.npy -> Which is the test, train and validation data for the third network. These file consist of data for only the blue channel.
+
+To do this, open terminal (make sure Data/processed_test, Data/processed_train, Data/processed_val are present):
+Go to code folder
+$ python loading_data.py
+
+
+Training models
+----------------
+We have trained 3 different models which take data from the files created in Data folder, train the model, and save the model with maximum accuracy on the validation data in saved_models folder.
+
+For training model 1:
+Go to code folder
+$ python model1.py
+
+For training model 2:
+Go to code folder
+$ python model2.py
+
+For training model 3:
+Go to code folder
+$ python model3.py
+
+The corresponding models are saved.
+
+
+Testing
+--------
+
+For running the test, you can justrun test_script by
+Go to code folder
+./test_script
+
+For testing one image, its channels are split into R, G and B.
+The R channel is fed as input to model 1, and the class is obtained.
+This is done by test1.py
+Go to code folder
+$ python test1.py
+It generates predicted_labels1.npy
+
+Test model 2
+This is done by test2.py
+Go to code folder
+$ python test2.py
+It generates predicted_labels2.npy
+
+Test model 3
+This is done by test3.py
+Go to code folder
+$ python test3.py
+It generates predicted_labels3.npy
+
+Final test
+Now run test.py, it takes the predicted labels from the individual CNN and combines them to give final output
+Go to code folder
+$ python test.py
+
+
+Validation
+-----------
+The validation script works similarily to the test scripts.
+They are just used for measuring the errors of different networks on different classes, and then for designing the ensemble.
+
+
+Output text files folder
+-------------------------
+The Output text files folder consist of text files which show the accuracies obtained by different networks, and the training process for each model.

@@ -1,0 +1,9 @@
+Working load and save - tweaked parameters
+
+('Max height is', 333)
+('Min width is', 394)
+Make a 64*64 image, and place all images in that, if image is smaller.
+If image is larger than 64*64, then resize it.
+
+validation error 52.187500 %
+ test error of best model 50.781250 %
